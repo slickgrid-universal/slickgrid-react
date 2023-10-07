@@ -113,7 +113,7 @@ class Example12 extends React.Component<Props, State> {
         exportWithFormatter: false,
         filterable: true,
         type: FieldType.number,
-        filter: { model: Filters.slider, /* operator: '>=',*/ params: { hideSliderNumber: true } }
+        filter: { model: Filters.slider, /* operator: '>=',*/ filterOptions: { hideSliderNumber: true } }
       },
       { id: 'start', name: 'Start', field: 'start', nameKey: 'START', formatter: Formatters.dateIso, outputType: FieldType.dateIso, type: FieldType.date, minWidth: 100, filterable: true, filter: { model: Filters.compoundDate } },
       { id: 'finish', name: 'Finish', field: 'finish', nameKey: 'FINISH', formatter: Formatters.dateIso, outputType: FieldType.dateIso, type: FieldType.date, minWidth: 100, filterable: true, filter: { model: Filters.compoundDate } },
