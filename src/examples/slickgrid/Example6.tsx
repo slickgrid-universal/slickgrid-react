@@ -402,12 +402,12 @@ class Example6 extends React.Component<Props, State> {
   private resetOptions(options: Partial<GraphqlServiceOption>) {
     const graphqlService = this.state.gridOptions!.backendServiceApi!.service as GraphqlService;
     this.reactGrid.paginationService!.setCursorBased(options.useCursor as boolean);
-    this.reactGrid.paginationService?.goToFirstPage();
     graphqlService.updateOptions(options);
     this.setState((state: State) => ({
       ...state,
       gridOptions: { ...this.state.gridOptions },
     }));
+    this.reactGrid.paginationService?.goToFirstPage();
   }
 
   async switchLanguage() {
