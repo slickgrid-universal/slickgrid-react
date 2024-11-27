@@ -7,6 +7,7 @@ import {
   SlickgridReact,
   type SlickgridReactInstance
 } from '../../slickgrid-react';
+import { zeroPadding } from './utilities';
 
 const NB_ITEMS = 995;
 
@@ -120,8 +121,8 @@ export default class Example1 extends React.Component<Props, State> {
         title: 'Task ' + i,
         duration: Math.round(Math.random() * 100) + '',
         percentComplete: randomPercent,
-        start: new Date(randomYear, randomMonth + 1, randomDay),
-        finish: new Date(randomYear + 1, randomMonth + 1, randomDay),
+        start: `${zeroPadding(randomYear)}-${zeroPadding(randomMonth + 1)}-${zeroPadding(randomDay)}`,
+        finish: `${zeroPadding(randomYear + 1)}-${zeroPadding(randomMonth + 1)}-${zeroPadding(randomDay)}`,
         effortDriven: (i % 5 === 0)
       };
     }
